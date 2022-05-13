@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="landing.css" />
+
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../logo.png"/>
+    <title>My Cart</title>
+  </head>
+  <style>
+    .CartContainer {
+      width: 100%;
+      height: 90%;
+      background-color: #ffffff;
+      margin-top: 5px;
+    }
+
+    .Header {
+      margin: 10px;
+      width: 99%;
+      height: 15%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+
+      box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .Heading {
+      font-size: 20px;
+      font-family: "Open Sans";
+      font-weight: 700;
+      color: #2f3841;
+    }
+
+    .Cart-Items {
+      margin-top: 10px;
+      width: 100%;
+      height: 30%;
+      display: flex;
+      margin-bottom: 10px;
+      box-shadow: 0 8px 10px -10px rgba(0, 0, 0, 0.5);
+    }
+    .image-box {
+      width: 15%;
+      text-align: center;
+    }
+
+
+    .image-box img {
+    width: 100%;
+    max-width: 90%;
+}
+
+
+    .about {
+      height: 100%;
+      width: 24%;
+    }
+    .title {
+      color: black;
+      text-align: center;
+      vertical-align: baseline;
+      font-size: 2vw;
+      margin-top: 100px;
+      margin-left: 50px;
+    }
+    .counter {
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .display {
+      width: 100%;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 30px;
+    }
+
+    .btn {
+    height: 25px;
+    background-color: rgba(214, 10, 61, 0.877);
+    text-align: center;
+    width: 25px;
+    margin: 10px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+
+    .count {
+      font-size: 16px;
+      font-family: "Open Sans";
+      font-weight: 600;
+      color: #202020;
+      margin: 5px;
+    }
+    .banner-cart {
+      position: absolute;
+      bottom: 2%;
+      width: 97%;
+      height: 90px;
+      background-color: white;
+      top: 10;
+    }
+
+    .banner {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .amount {
+      position: absolute;
+      padding-top: 20px;
+      font-size: 18px;
+      font-family: "Open Sans";
+      font-weight: 800;
+      color: #202020;
+      float: right;
+      text-align: right;
+      right: 80px;
+    }
+
+    .buttoncart {
+      width: 100%;
+      height: 40px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: "Open Sans";
+      font-weight: 600;
+      color: white;
+      background-color: rgba(214, 10, 61, 0.877);
+      margin: 15px;
+    }
+
+    #output {
+      display: none;
+    }
+
+    #hide {
+      display: none;
+    }
+
+    .foot {
+      width: 100%;
+      background-color: white;
+      height: 80px;
+      position: fixed;
+      bottom: 0px;
+      text-align: center;
+    }
+
+    .inner-foot {
+      width: 98%;
+      background-color: rgba(214, 10, 61, 0.877);
+      color: white;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 5px;
+      height: 30px;
+    }
+
+    .banner{
+      height: 80px;
+      width: 100%;
+      display: flex;
+      background-color: white;
+      padding: 10px;
+    }
+
+    .banner-text{
+      width:100%;margin-top: 15px;margin-left:0px;
+      text-align: start;
+      font-size: 1vw;
+    }
+
+    .banner img {
+    float: right;
+    height: 80%;
+    width: 16%;
+}
+    @media screen and (max-width: 600px) {
+  h2 {
+  font-size: 26px;
+  }
+
+  .amount{
+    font-size: 16px;
+  }
+
+  .counter{
+    font-size: 2vh;
+    width: 50%;
+  }
+
+  #hide{
+    display: block;
+  }
+  .banner-text{
+font-size: 3vw;
+    }
+
+    .image-box {
+    width: 35%;
+    text-align: center;
+}
+
+.amount {
+    margin-top: 40px;
+}
+.Cart-Items {
+    padding-bottom: 30px;
+}
+
+
+}
+
+@media screen and (max-width: 900px) {
+  h2 {
+  font-size: 20px;
+  }
+
+  .amount{
+    font-size: 16px;
+  }
+
+  .counter{
+    font-size: 2vh;
+    width: 50%;
+  }
+
+  #hide{
+    display: block;
+  }
+  .banner-text{
+    margin-left:-3px;
+    }
+}
+  
+  </style>
+  <body>
+    <div class="nav-menu">
+      <ul>
+        <li><a href="#">Signin</a></li>
+        <li><a href="#">Register</a></li>
+      </ul>
+    </div>
+    <nav class="header-menu">
+
+      <input type="checkbox" id="click" />
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <div class="logo">
+        <img
+          src="../logo.png"
+          class="img-fluid"
+          style="height: 70px; width: 140px; margin-top: 25px; padding: auto"
+        />
+      </div>
+
+      <ul>
+        <li><a href="./landingpage.html">Home</a></li>
+        <li><a href="./cart.html">Products</a></li>
+        <li><a id="hide" href="./fruits.html">Fruits & Vegetables</a></li>
+        <li><a id="hide" href="./bakery.html">Bakery Cakes and Dairy</a></li>
+        <li><a id="hide" href="./beauty.html">Beauty and Hygiene</a></li>
+        <li><a id="hide" href="./beverage.html">Beverages</a></li>
+        <li><a id="hide" href="./baby.html">Baby Care</a></li>
+      </ul>
+      <div class="nav-cart">
+        <div class="nav-cart-icon">
+          <?xml version="1.0" encoding="utf-8"?>
+          <svg
+            class="change-my-color"
+            version="1.1"
+            id="Layer_1"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 24 24"
+            style="enable-background: new 0 0 24 24"
+            xml:space="preserve"
+          >
+            <path
+              d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
+        </div>
+        <div class="nav-cart-text">
+          <span id="item"> 0 item</span>
+        </div>
+      </div>
+    </nav>
+    <div class="CartContainer">
+      <div class="Header">
+        <h3 class="Heading">My Cart  0 items</h3>
+      </div>
+
+      <div class="Itemas-Container"></div>
+
+      <div class="banner">
+        <img src='../lowest-price.png' width="100px"/>
+        <h3 class="banner-text">You won't find it Cheaper anywhere</h3>
+  
+      </div>
+    </div>
+   
+
+    <div class="cart-bottom"></div>
+
+ 
+  <script src="main.js">
+          let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+   </body>
+</html>

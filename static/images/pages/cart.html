@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="landing.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../logo.png"/>
+    <title>Buy Now</title>
+  </head>
+  <style>
+ 
+  </style>
+  <body>
+    <div class="nav-menu">
+      <ul>
+        <li><a href="./login.html">Signin</a></li>
+        <li><a href="./register.html">Register</a></li>
+      </ul>
+    </div>
+    <nav class="header-menu">
+
+      <input type="checkbox" id="click" />
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <div class="logo">
+        <img
+          src="../logo.png"
+          class="img-fluid"
+          style="height: 70px; width: 140px; margin-top: 25px; padding: auto"
+        />
+      </div>
+
+      <ul>
+        <li><a href="./landingpage.html">Home</a></li>
+        <li><a href="./cart.html">Products</a></li>
+        <li><a id="hide" href="./fruits.html">Fruits & Vegetables</a></li>
+        <li><a id="hide" href="./bakery.html">Bakery Cakes and Dairy</a></li>
+        <li><a id="hide" href="./beauty.html">Beauty & Hygiene</a></li>
+        <li><a id="hide" href="./beverage.html">Beverages</a></li>
+        <li><a id="hide" href="./baby.html">Baby Care</a></li>
+      </ul>
+      <div class="nav-cart">
+        <div class="nav-cart-icon">
+          <?xml version="1.0" encoding="utf-8"?>
+          <svg
+            class="change-my-color"
+            version="1.1"
+            id="Layer_1"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 24 24"
+            style="enable-background: new 0 0 24 24"
+            xml:space="preserve"
+          >
+            <path
+              d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
+        </div>
+        <div class="nav-cart-text">
+          <span id="item"> 0 item</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="cartDisplay"></div>
+
+    <footer>
+      <span>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</span>
+    </footer>
+  
+  <script src="main.js">
+          let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+  </body>
+</html>
